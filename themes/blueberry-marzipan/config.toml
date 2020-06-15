@@ -1,7 +1,7 @@
 # The URL the site will be built for
-base_url = "https://urcad.es"
-title = "É. Urcades"
-description = "The website of Édouard Urcades"
+base_url = ""
+title = "Blueberry Marzipan"
+description = "Welcome to Blueberry Marzipan"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
