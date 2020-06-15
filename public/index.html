@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, min-scale=1, max-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description"
-        content="I am a user researcher, content producer and social practice artist from Houston, Texas.">
-    <meta name="og:description"
-        content="I am a user researcher, content producer and social practice artist from Houston, Texas.">
+    <meta name="description" content="I am an artist and developer from Houston, Texas.">
+    <meta name="og:description" content="I am an artist and developer from Houston, Texas.">
     <meta property="og:title" content="Zachary Schulte">
     <meta property="twitter:card" content="summary">
     <meta property="og:type" content="website">
+
+    <!-- Zola Template Blueberry Marzipan inspired by the personal site of Édouard Urcades -->
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon32.png">
@@ -45,6 +45,8 @@
         }
 
         main {
+            display: flex;
+            flex-flow: column;
             max-width: 70ch;
             margin: auto;
         }
@@ -83,15 +85,96 @@
         }
 
         hr {
-            height: 2em;
+            height: 1em;
             background: repeating-linear-gradient(45deg,
-                    #606dbc,
-                    #606dbc 2em,
+                    rgba(96, 108, 188, 0) 4em,
+                    rgba(96, 108, 188, 0) 4em,
                     #f1f227 2em,
-                    #465298 4em);
+                    rgba(96, 108, 188, 0) 8em);
             border: 0;
         }
+
+
+        X3D,
+        x3d {
+            width: 5rem;
+            height: 5rem;
+            cursor: pointer;
+            justify-self: center;
+        }
+
+        @media only screen and (min-width: 770px) {
+
+            X3D,
+            x3d {
+                width: 10rem;
+                height: 10rem;
+            }
+        }
+
+        X3D:hover,
+        x3d:hover,
+        .x3dom-canvas:hover {
+            cursor: pointer;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        .x3dom-canvas {
+            border: none;
+            cursor: pointer;
+            cursor: -webkit-grab;
+            cursor: grab;
+            width: 100%;
+            height: 100%;
+        }
+
+        .x3dom-canvas-mousedown {
+            cursor: -webkit-grabbing;
+            cursor: grabbing;
+        }
+
+        #cyberscape-thumb {
+            display: inline-grid;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1.5rem;
+            padding-inline-start: unset;
+            text-align: center;
+            list-style-type: none;
+        }
+
+        ul li {
+            display: flex;
+            margin: 1rem;
+            flex-flow: row;
+            justify-self: center;
+        }
+
+        ul.writing li:not(:first-of-type) {
+            padding-top: 1rem;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 80%;
+            height: auto;
+        }
     </style>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'>
 </head>
 
 <body>
@@ -99,40 +182,264 @@
     <header>
         <h1>☀ZacharySchulte.com☀<h1>
     </header>
+    <hr>
+    </hr>
     <main>
 
-        <summary>
-            <hr>
-            </hr>
-            Thank you for visiting my website. <br> <br>
-            I am a user researcher, content producer and social practice artist from Houston, Texas. <br> <br>
-            Theatre provides the basis of my formal education and guides my work. Theatre is the structure of action, a
-            story as an experience. Stories hold a lot of power: from familiarizing our place in a family dynamic to
-            shifting society. Many objects and behaviors are embodiments of the stories around us. I hope to use the
-            power of storytelling to build <strong>supportive structures of action</strong>.
-        </summary>
-        <section>
-            <ul>
-                <li><b>EMAIL:</b> <a href="mailto:zachary@zacharyschulte.com">firstname@fullname.com</a></li>
-                <li><b>RESUME:</b> <a href="push/schulte-resume.pdf" target="_blank">PDF</a></li>
-                <li><b>PORTFOLIO:</b> <a href="push/schulte-portfolio.pdf" target="_blank">PDF</a> <br>(please message
-                    me for password)</li>
-            </ul>
-        </section>
+        <div class="flex-container">
 
-        <section>
-            <h1 id="writing">Writing</h1>
-            <ul class="writing">
-                
-                
-                <li><a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;writing&#x2F;park-pause-premise-and-history&#x2F;">Park Pause: Premise and History</a> <i>2019</i></li>
-                
+
+            <h2>Artist/Developer <br> Houston, TX</h2>
+
+            Thank you for visiting my website. <br><br>
+            <b>EMAIL:</b> <a href="mailto:zachary@zacharyschulte.com">firstname@fullname.com</a></li>
+            <!-- <li><b>RESUME:</b> <a href="push/schulte-resume.pdf" target="_blank">PDF</a></li> -->
+            </ul>
+
+        </div>
+
+        <div class="flex-container">
+            <h2><b>MOBILE WEB:</b></h2>
+            <ul class="flex-container">
+                <ul>
+                    <li class="3d-icon"> <a id="cyberscape-thumb" href="https://park-pause-cyberscapes.glitch.me/smith">
+                            <x3d showProgress='false' disableTouch='true' disableKeys='true' disableDoubleClick='true'
+                                disableMiddleDrag='true' disableRightDrag='true' disableLeftDrag='true'>
+                                <scene>
+                                    <NavigationInfo explorationMode="none" type='NONE'></NavigationInfo>
+                                    <TouchSensor enabled='false' metadata='X3DMetadataObject'></TouchSensor>
+                                    <transform DEF='3dthumbnail'>
+                                        <transform scale='3,3,3'>
+                                            <shape>
+                                                <appearance>
+                                                    <ImageTexture
+                                                        url="https://cdn.glitch.com/a79bc0a1-bf63-47a6-bb38-6f9450b9a6d2%2Fsmith360blue.png?v=1574791874402">
+                                                        <ImageTexture />
+                                                        <material diffuseColor='1 0 0'></material>
+                                                </appearance>
+                                                <sphere></sphere>
+                                            </shape>
+                                        </transform>
+                                    </transform>
+                                    <timeSensor DEF='clock' cycleInterval='8' loop='true'></timeSensor>
+                                    <orientationInterpolator DEF='spinThings' key='0 0.25 0.5 0.75 1'
+                                        keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'>
+                                    </orientationInterpolator>
+
+                                    <ROUTE fromNode='clock' fromField='fraction_changed' toNode='spinThings'
+                                        toField='set_fraction'></ROUTE>
+                                    <ROUTE fromNode='spinThings' fromField='value_changed' toNode='3dthumbnail'
+                                        toField='set_rotation'>
+                                    </ROUTE>
+                                </scene>
+                            </x3d>Smith Park Memoryscape<br> (ThreeJS Web)
+                        </a></li>
+                    <li class="3d-icon"> <a id="cyberscape-thumb" href="http://textoplasm.net/">
+                            <x3d showProgress='false' disableTouch='true' disableKeys='true' disableDoubleClick='true'
+                                disableMiddleDrag='true' disableRightDrag='true' disableLeftDrag='true'>
+                                <scene>
+                                    <NavigationInfo explorationMode="none" type='NONE'></NavigationInfo>
+                                    <TouchSensor enabled='false' metadata='X3DMetadataObject'></TouchSensor>
+                                    <transform DEF='3dthumbnail'>
+                                        <transform scale='3,3,3'>
+                                            <shape>
+                                                <appearance>
+                                                    <ImageTexture url="mutagen.png">
+                                                        <ImageTexture />
+                                                        <material diffuseColor='1 0 0'></material>
+                                                </appearance>
+                                                <sphere></sphere>
+                                            </shape>
+                                        </transform>
+                                    </transform>
+                                    <timeSensor DEF='clock' cycleInterval='8' loop='true'></timeSensor>
+                                    <orientationInterpolator DEF='spinThings' key='0 0.25 0.5 0.75 1'
+                                        keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'>
+                                    </orientationInterpolator>
+
+                                    <ROUTE fromNode='clock' fromField='fraction_changed' toNode='spinThings'
+                                        toField='set_fraction'></ROUTE>
+                                    <ROUTE fromNode='spinThings' fromField='value_changed' toNode='3dthumbnail'
+                                        toField='set_rotation'>
+                                    </ROUTE>
+                                </scene>
+                            </x3d> Markov Mutagen<br> (Flask JS)
+                        </a></li>
+                    <li class="3d-icon"> <a id="cyberscape-thumb" href="https://zacharyschulte.com/johnoliverinsults/">
+                            <x3d showProgress='false' disableTouch='true' disableKeys='true' disableDoubleClick='true'
+                                disableMiddleDrag='true' disableRightDrag='true' disableLeftDrag='true'>
+                                <scene>
+                                    <NavigationInfo explorationMode="none" type='NONE'></NavigationInfo>
+                                    <TouchSensor enabled='false' metadata='X3DMetadataObject'></TouchSensor>
+                                    <transform DEF='3dthumbnail'>
+                                        <transform scale='3,3,3'>
+                                            <shape>
+                                                <appearance>
+                                                    <ImageTexture url="insult-card.png">
+                                                        <ImageTexture />
+                                                        <material diffuseColor='1 0 0'></material>
+                                                </appearance>
+                                                <Plane solid='false'></Plane>
+                                            </shape>
+                                        </transform>
+                                    </transform>
+                                    <timeSensor DEF='clock' cycleInterval='8' loop='true'></timeSensor>
+                                    <orientationInterpolator DEF='spinThings' key='0 0.25 0.5 0.75 1'
+                                        keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'>
+                                    </orientationInterpolator>
+
+                                    <ROUTE fromNode='clock' fromField='fraction_changed' toNode='spinThings'
+                                        toField='set_fraction'></ROUTE>
+                                    <ROUTE fromNode='spinThings' fromField='value_changed' toNode='3dthumbnail'
+                                        toField='set_rotation'>
+                                    </ROUTE>
+                                </scene>
+                            </x3d>John Oliver Insult Generator<br> (JS)
+                        </a></li>
+                    <li class="3d-icon"> <a id="cyberscape-thumb" href="https://park-pause-cyberscapes.glitch.me/">
+                            <x3d showProgress='false' disableTouch='true' disableKeys='true' disableDoubleClick='true'
+                                disableMiddleDrag='true' disableRightDrag='true' disableLeftDrag='true'>
+                                <scene>
+                                    <NavigationInfo explorationMode="none" type='NONE'></NavigationInfo>
+                                    <TouchSensor enabled='false' metadata='X3DMetadataObject'></TouchSensor>
+                                    <transform DEF='3dthumbnail'>
+                                        <transform scale='3,3,3'>
+                                            <shape>
+                                                <appearance>
+                                                    <ImageTexture
+                                                        url="https://cdn.glitch.com/a79bc0a1-bf63-47a6-bb38-6f9450b9a6d2%2Fshiffick360purp.png?v=1578605122574">
+                                                        <ImageTexture />
+                                                        <material diffuseColor='1 0 0'></material>
+                                                </appearance>
+                                                <sphere></sphere>
+                                            </shape>
+                                        </transform>
+                                    </transform>
+                                    <timeSensor DEF='clock' cycleInterval='8' loop='true'></timeSensor>
+                                    <orientationInterpolator DEF='spinThings' key='0 0.25 0.5 0.75 1'
+                                        keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'>
+                                    </orientationInterpolator>
+
+                                    <ROUTE fromNode='clock' fromField='fraction_changed' toNode='spinThings'
+                                        toField='set_fraction'></ROUTE>
+                                    <ROUTE fromNode='spinThings' fromField='value_changed' toNode='3dthumbnail'
+                                        toField='set_rotation'>
+                                    </ROUTE>
+                                </scene>
+                            </x3d>Cyberscape Index
+                        </a></li>
+                </ul>
                 </li>
             </ul>
-        </section>
-        <footer>☽ 2019 ☾<br></footer>
+        </div>
+
+        <section id="flex-container">
+            <h2><b>UNITY:</b></h2>
+            <ul class="flex-container">
+
+                <ul>
+                    <li class="3d-icon"><a id="cyberscape-thumb"
+                            href="https://itch.io/embed-upload/1928012?color=6a289e">
+                            <x3d showProgress='false' disableTouch='true' disableKeys='true' disableDoubleClick='true'
+                                disableMiddleDrag='true' disableRightDrag='true' disableLeftDrag='true'>
+                                <scene>
+                                    <NavigationInfo explorationMode="none" type='NONE'></NavigationInfo>
+                                    <TouchSensor enabled='false' metadata='X3DMetadataObject'></TouchSensor>
+                                    <transform DEF='3dthumbnail'>
+                                        <transform scale='3,3,3'>
+                                            <shape>
+                                                <appearance>
+                                                    <ImageTexture
+                                                        url="https://cdn.glitch.com/a79bc0a1-bf63-47a6-bb38-6f9450b9a6d2%2Ftree.png?v=1585335346999">
+                                                        <ImageTexture />
+                                                        <material diffuseColor='1 0 0'></material>
+                                                </appearance>
+                                                <Plane solid='false'></Plane>
+                                            </shape>
+                                        </transform>
+                                    </transform>
+                                    <timeSensor DEF='clock' cycleInterval='8' loop='true'></timeSensor>
+                                    <orientationInterpolator DEF='spinThings' key='0 0.25 0.5 0.75 1'
+                                        keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'>
+                                    </orientationInterpolator>
+
+                                    <ROUTE fromNode='clock' fromField='fraction_changed' toNode='spinThings'
+                                        toField='set_fraction'>
+                                    </ROUTE>
+                                    <ROUTE fromNode='spinThings' fromField='value_changed' toNode='3dthumbnail'
+                                        toField='set_rotation'>
+                                    </ROUTE>
+                                </scene>
+                            </x3d> Houston Dream Realms <br> (Web)
+                        </a></li>
+                    <li class="3d-icon"> <a id="cyberscape-thumb" href="https://lazyatchurches.itch.io/emoji-cache">
+                            <x3d showProgress='false' disableTouch='true' disableKeys='true' disableDoubleClick='true'
+                                disableMiddleDrag='true' disableRightDrag='true' disableLeftDrag='true'>
+                                <scene>
+                                    <NavigationInfo explorationMode="none" type='NONE'></NavigationInfo>
+                                    <TouchSensor enabled='false' metadata='X3DMetadataObject'></TouchSensor>
+                                    <transform DEF='3dthumbnail'>
+                                        <transform scale='3,3,3'>
+                                            <shape>
+                                                <appearance>
+                                                    <ImageTexture url="treasure2.png">
+                                                        <ImageTexture />
+                                                        <material diffuseColor='1 0 0'></material>
+                                                </appearance>
+                                                <Plane solid='false'></Plane>
+                                            </shape>
+                                        </transform>
+                                    </transform>
+                                    <timeSensor DEF='clock' cycleInterval='8' loop='true'></timeSensor>
+                                    <orientationInterpolator DEF='spinThings' key='0 0.25 0.5 0.75 1'
+                                        keyValue='0 1 0 0  0 1 0 1.57079  0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'>
+                                    </orientationInterpolator>
+
+                                    <ROUTE fromNode='clock' fromField='fraction_changed' toNode='spinThings'
+                                        toField='set_fraction'>
+                                    </ROUTE>
+                                    <ROUTE fromNode='spinThings' fromField='value_changed' toNode='3dthumbnail'
+                                        toField='set_rotation'>
+                                    </ROUTE>
+                                </scene>
+                            </x3d>EmojiCache <br> (Mobile)
+                        </a></li>
+                </ul>
+                </li>
+            </ul>
+
+
+            <section id="flex-container">
+                <h2><b>OTHER:</b></h2>
+                <ul>
+                    <li><a href="https://medium.com/arco-iris-ideations/park-pause-new-public-memory-5d2240a89cfa"
+                            target="_blank">Park Pause <br> (Artistic Research)</a> <br></li>
+                    <li><a href="https://www.are.na/zachary-schulte/lazy-at-churches-3d" target="_blank">3D art &
+                            design</a> <br></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLdVN6pxRX3_peXgEMpzKQO06662WYN4R5"
+                            target="_blank">Computre-Generated Monologues <br> (YouTube Series)</a> <br></li>
+                    <li><a href="https://www.are.na/zachary-schulte/lazy-at-churches-2d" target="_blank">2D art &
+                            design</a> <br></li>
+                    <li><a href="https://lazyatchurches.itch.io/indefinite-marginalia-number-one"
+                            target="_blank">Indefinite Marginalia <br>
+                            (Unity Web)</a> <br></li>
+
+
+                    <li><a href="push/schulte-portfolio.pdf" target="_blank">user research</a> <br></li>
+                    <li><a href="https://github.com/zacharyschulte" target="_blank">github</a> <br></li>
+                    <li><a href="https://medium.com/arco-iris-ideations " target="_blank">medium</a> <br></li>
+
+                </ul>
+                </div>
+
+
+
     </main>
+    <hr>
+    </hr>
+    <footer>☽ 2020 ☾<br></footer>
+
     
-<script src="/livereload.js?port=1025&mindelay=10"></script></body>
+</body>
 
 </html>
