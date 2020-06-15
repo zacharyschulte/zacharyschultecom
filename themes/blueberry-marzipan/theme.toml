@@ -1,0 +1,8 @@
+### Theme config
+name = "blueberry marzipan"
+description = "Plain, fruity treat."
+license = "BSD-2-Clause"
+
+[author]
+name = "zacharyschulte"
+homepage = "https://zacharyschulte.com/"
